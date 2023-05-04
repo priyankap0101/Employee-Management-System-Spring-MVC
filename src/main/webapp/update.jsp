@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@  taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,39 +53,41 @@ input {
 
 input:hover {
 	background-color: #08535C;
-	border-color: red;
 	border: none;
 }
+
 input:enabled {
 	color: orange;
 	border: 2px 2px 2px dotted;
 }
 
-
 h2 {
 	font-size: 2rem;
 }
 
-h1 {
-	color: white;
-}
-
-.submitbtn {
+.updatebtn {
 	background-color: black;
 	color: aqua;
 	width: 14rem;
 	border-radius: 20px;
 	margin-left: 100px;
 }
-</style>
 
+h1 {
+	color: white;
+}
+</style>
 
 <body>
 
-	<form:form action="addEmployee" modelAttribute="employee">
+
+	<form:form action="saveUpdatedEmployee" modelAttribute="employee">
+	
+		<h1>Update Employee Details</h1>
 		
-		<h1>Fill Employee Details</h1>
-		
+		Id:-<form:input path="employeeId" readonly="true" />
+		<br>
+		<br>
 		Name:-<form:input path="employeeName" />
 		<br>
 		<br>
@@ -99,11 +101,9 @@ h1 {
 		<br>
 		<br>
 
-		<input class="submitbtn" type="submit" value="save">
+		<input class="updatebtn" type="submit" value="Update">
 
 
 	</form:form>
-
-
 </body>
 </html>
